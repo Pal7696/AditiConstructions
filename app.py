@@ -35,5 +35,13 @@ def home():
     
     return render_template('index.html', services=services, gallery_images=gallery_images)
 
+def handler(event, context):
+    from werkzeug.wrappers import Request
+    from werkzeug.serving import run_simple
+
+    # Create a WSGI application
+    return app
+
+# For local development
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True)

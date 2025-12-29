@@ -172,7 +172,7 @@ nav {
     opacity: 0.20;
     z-index: -1;
     border-radius: 2rem;
-    filter: brightness(0.8) saturate(1.1) contrast(1.05);
+    filter: brightness(1.2) saturate(1.1) contrast(1.05);
 }
 
 .hero-content {
