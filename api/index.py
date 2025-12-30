@@ -1,6 +1,11 @@
 from flask import Flask, render_template
+import os
 
-app = Flask(__name__)
+# Set template and static folders relative to the project root
+template_dir = os.path.join(os.path.dirname(__file__), '..', 'templates')
+static_dir = os.path.join(os.path.dirname(__file__), '..', 'static')
+
+app = Flask(__name__, template_folder=template_dir, static_folder=static_dir)
 
 @app.route('/')
 def home():
@@ -35,11 +40,6 @@ def home():
     
     return render_template('index.html', services=services, gallery_images=gallery_images)
 
-# For Vercel deployment, the app object is the handler
-# For local development
-if __name__ == '__main__':
-    app.run(debug=True)
-=======
 # For Vercel deployment, the app object is the handler
 # For local development
 if __name__ == '__main__':
